@@ -16,62 +16,6 @@
   <script>
     $(function(){
       $('#world-map').vectorMap({map: 'world_mill'});
-      var map1,
-          map2;
-      var str = {
-        "AF": 'Cameroon train crash death toll rises to more than 70',
-        "NA": 'US election: Trump outlines plan for first 100 days', 
-        "OC": 'Stripped, stomped and sprayed: Former police officer Yvonne Berry breaks silence on Ballarat arrest ordeal', 
-        "AS": 'Reporting from the front line of Iraq offensive against ISIL in Mosul',
-        "EU": '19 Killed in Russian helicopter crash',
-        "SA": 'Venezuelan women march in protest following suspension of recall referendum against President Maduro',
-       }
-      new jvm.MultiMap({
-        container: $('#map1'),
-        maxLevel: 1,
-        mapUrlByCode: function(code, multiMap){
-          return 'assets/us/jquery-jvectormap-data-'+code.toLowerCase()+'-'+multiMap.defaultProjection+'-en.js';
-        },
-        main: {
-          map: 'continents_mill',
-          backgroundColor: "#ADD8E6",
-          series: {
-            regions: [
-            {
-              scale: {
-                africa: '../gifs/AF.gif',
-                asia: '../gifs/AS1.gif',
-                oceania: '../gifs/OC2.gif',
-                europe: '../gifs/EU.gif',
-                south_america: '../gifs/SA.gif',
-                north_america: '../gifs/NA1.gif'
-              },
-              values: {
-                "AF": 'africa',
-                "NA": 'north_america', 
-                "OC": 'oceania', 
-                "AS": 'asia',
-                "EU": 'europe',
-                "SA": 'south_america',
-              },
-              attribute: 'fill'
-            }]
-          },
-          onRegionTipShow: function(e, el, code){
-            el.html(el.html()+": "+str[code]);
-          },
-          onRegionClick: function (event, code) {
-            setTimeout(function(){
-              if (code == "AF") {window.location.href = 'https://www.youtube.com/watch?v=WG0F6IaClZ4&index=4&list=PLr1-FC1l_JLFcq9r9Y3uFLkH8G37WmMRQ'}
-              if (code == "NA") {window.location.href = 'http://www.bbc.com/news/election-us-2016-37741792'}
-              if (code == "OC") {window.location.href = 'http://www.abc.net.au/news/2016-10-18/former-cop-yvonne-berry-speaks-out-about-ballarat-police-abuse/7928382'}
-              if (code == "AS") {window.location.href = 'https://www.youtube.com/watch?v=mRur--rxfXQ'}
-              if (code == "EU") {window.location.href = 'http://www.euronews.com/2016/10/22/19-killed-in-russian-helicopter-crash'}
-              if (code == "SA") {window.location.href = 'https://www.theguardian.com/world/2016/oct/20/argentina-women-south-america-marches-violence-ni-una-menos'}
-            },2000);
-          },
-        }
-      });
     });
         
   </script>
