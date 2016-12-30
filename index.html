@@ -4,6 +4,7 @@
   <title> jVectorMap demo</title>
   <link rel="stylesheet" media="all" href="jquery-jvectormap-2.0.3.css"/>
   <script src="jquery-jvectormap-2.0.3.min.js"></script>
+  <script src="jquery-jvectormap-world-mill.js"></script>
   
 <body>
   <div id="map1" style="width: 1400px; height: 750px"></div>
@@ -14,6 +15,7 @@
 
   <script>
     $(function(){
+      $('#world-map').vectorMap({map: 'world_mill'});
       var map1,
           map2;
       var str = {
