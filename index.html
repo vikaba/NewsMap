@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> jVectorMap demo</title>
+  <title>NewsMap</title>
   <script src="jquery.js"></script>
   <link rel="stylesheet" href="jquery-jvectormap-2.0.3.css" type="text/css" media="screen"/>
   <script src="jquery-jvectormap-2.0.3.min.js"></script>
@@ -16,10 +16,31 @@
 
   <script>
   $(function(){
-      $('#world-map').vectorMap({
-        map: 'continents_mill'
-      });
-    }) 
-  </script>
+new jvm.Map({
+      map: 'continents_mill',
+      container: $('#map2007'),
+      series: {
+        regions: [{
+          scale: {
+            africa: '../gifs/AF.gif',
+                asia: '../gifs/AS1.gif',
+                oceania: '../gifs/OC2.gif',
+                europe: '../gifs/EU.gif',
+                south_america: '../gifs/SA.gif',
+                north_america: '../gifs/NA1.gif'
+          },
+          attribute: 'fill',
+          values: 
+                "AF": 'africa',
+                "NA": 'north_america', 
+                "OC": 'oceania', 
+                "AS": 'asia',
+                "EU": 'europe',
+                "SA": 'south_america',
+        }]
+      }
+    });
+    
+</script>
 </body>
 </html>
