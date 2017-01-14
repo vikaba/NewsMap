@@ -14,10 +14,28 @@
   <div id="y"></div>
   <div id="customTip" class="jvectormap-tip"></div>-->
 
- <script>
-    $(function(){
-       $('#world-map').vectorMap({
+  <script>
+  $(function(){
+      $('#world-map').vectorMap({
         map: 'continents_mill'
+      });
+    }) 
+    $(function(){
+      var map1,
+          map2;
+      var str = {
+        "AF": 'Cameroon train crash death toll rises to more than 70',
+        "NA": 'US election: Trump outlines plan for first 100 days', 
+        "OC": 'Stripped, stomped and sprayed: Former police officer Yvonne Berry breaks silence on Ballarat arrest ordeal', 
+        "AS": 'Reporting from the front line of Iraq offensive against ISIL in Mosul',
+        "EU": '19 Killed in Russian helicopter crash',
+        "SA": 'Venezuelan women march in protest following suspension of recall referendum against President Maduro',
+       }
+      new jvm.MultiMap({
+        container: $('#map1'),
+        maxLevel: 1,
+        mapUrlByCode: function(code, multiMap){
+          return 'assets/us/jquery-jvectormap-data-'+code.toLowerCase()+'-'+multiMap.defaultProjection+'-en.js';
         },
         main: {
           map: 'continents_mill',
@@ -44,7 +62,9 @@
               attribute: 'fill'
             }]
           },
-
+          onRegionTipShow: function(e, el, code){
+            el.html(el.html()+": "+str[code]);
+          },
           onRegionClick: function (event, code) {
             setTimeout(function(){
               if (code == "AF") {window.location.href = 'https://www.youtube.com/watch?v=WG0F6IaClZ4&index=4&list=PLr1-FC1l_JLFcq9r9Y3uFLkH8G37WmMRQ'}
