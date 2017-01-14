@@ -16,8 +16,8 @@
 
  <script>
     $(function(){
-      var map1,
-          map2;
+       $('#world-map').vectorMap({
+        map: 'continents_mill'
       var str = {
         "AF": 'Cameroon train crash death toll rises to more than 70',
         "NA": 'US election: Trump outlines plan for first 100 days', 
@@ -27,7 +27,7 @@
         "SA": 'Venezuelan women march in protest following suspension of recall referendum against President Maduro',
        }
       new jvm.MultiMap({
-        container: $('#map1'),
+        container: $('#world-map'),
         maxLevel: 1,
         mapUrlByCode: function(code, multiMap){
           return 'assets/us/jquery-jvectormap-data-'+code.toLowerCase()+'-'+multiMap.defaultProjection+'-en.js';
