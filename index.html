@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
-<!--<meta http-equiv="refresh" content="0; URL='http://github.com/vikaba/NewsMap'" />-->
+<meta http-equiv="refresh" content="0; URL='http://github.com/vikaba/NewsMap'" />
 <head>
   <title>NewsMap</title>
   <script src="jquery.js"></script>
@@ -9,13 +9,40 @@
   <script src="jquery-jvectormap-continents-mill.js"></script>
   </head>  
 <body>
-  <div id="world-map" style="width: 1300px; height: 750px"></div>
+  <div id="world-map" style="width: 1300px; height: 750px"></div> -->
 
   <!-- <div id="x"></div>
   <div id="y"></div>
   <div id="customTip" class="jvectormap-tip"></div>-->
+  
+<!DOCTYPE html>
+<html>
+<head>
+  <title> jVectorMap demo</title>
+  <script src="jquery.js"></script>
+  <link rel="stylesheet" href="jquery-jvectormap-2.0.3.css" type="text/css" media="screen"/>
+  <script src="jquery-jvectormap-2.0.3.min.js"></script>
+  <script src="jquery-jvectormap-world-mill.js"></script>
+  </head>  
+<body>
+  <div id="world-map" style="width: 1400px; height: 750px"></div>
+
+  <!-- <div id="x"></div>
+  <div id="y"></div>
+  <div id="customTip" class="jvectormap-tip"></div> -->
 
   <script>
+    $(function(){
+      $('#world-map').vectorMap({
+        map: 'world_mill'
+      });
+    })
+        
+  </script>
+</body>
+</html>
+
+  <!--<script>
   $(function(){
 new jvm.Map({
       map: 'continents_mill',
