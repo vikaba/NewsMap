@@ -35,7 +35,30 @@
   <script>
     $(function(){
       $('#map').vectorMap({
-        map: 'continents_mill'
+        map: 'continents_mill',
+        backgroundColor: "#ADD8E6",
+          series: {
+            regions: [
+            {
+              scale: {
+                africa: '../continent-images/africa.gif',
+                asia: '../continent-images/africa.gif',
+                oceania: '../continent-images/africa.gif',
+                europe: '../continent-images/africa.gif',
+                south_america: '../continent-images/africa.gif',
+                north_america: '../continent-images/africa.gif'
+              },
+              values: {
+                "AF": 'africa',
+                "NA": 'north_america', 
+                "OC": 'oceania', 
+                "AS": 'asia',
+                "EU": 'europe',
+                "SA": 'south_america',
+              },
+              attribute: 'fill'
+            }]
+          },
       });
     })
         
