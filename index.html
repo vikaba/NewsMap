@@ -23,10 +23,10 @@
   <script src="jquery.js"></script>
   <link rel="stylesheet" href="jquery-jvectormap-2.0.3.css" type="text/css" media="screen"/>
   <script src="jquery-jvectormap-2.0.3.min.js"></script>
-  <script src="jquery-jvectormap-world-mill.js"></script>
+  <script src="jquery-jvectormap-continents-mill.js"></script>
   </head>  
 <body>
-  <div id="world-map" style="width: 1400px; height: 750px"></div>
+  <div id="map" style="width: 1400px; height: 750px"></div>
 
   <!-- <div id="x"></div>
   <div id="y"></div>
@@ -34,8 +34,8 @@
 
   <script>
     $(function(){
-      $('#world-map').vectorMap({
-        map: 'world_mill'
+      $('#map').vectorMap({
+        map: 'continents_mill'
       });
     })
         
