@@ -44,7 +44,7 @@
                 africa: 'africa.gif',
                 asia: 'asia.gif',
                 oceania: 'australia.gif',
-                europe: 'europe.gif',
+                europe: 'russia.gif',
                 south_america: 'southamerica.gif',
                 north_america: 'america.gif'
               },
@@ -59,8 +59,23 @@
               attribute: 'fill'
             }]
           },
+          onRegionTipShow: function(e, el, code){
+            el.html(el.html()+": "+str[code]);
+          },
+          onRegionClick: function (event, code) {
+            setTimeout(function(){
+              if (code == "AF") {window.location.href = 'https://www.youtube.com/watch?v=WG0F6IaClZ4&index=4&list=PLr1-FC1l_JLFcq9r9Y3uFLkH8G37WmMRQ'}
+              if (code == "NA") {window.location.href = 'http://www.bbc.com/news/election-us-2016-37741792'}
+              if (code == "OC") {window.location.href = 'http://www.abc.net.au/news/2016-10-18/former-cop-yvonne-berry-speaks-out-about-ballarat-police-abuse/7928382'}
+              if (code == "AS") {window.location.href = 'https://www.youtube.com/watch?v=mRur--rxfXQ'}
+              if (code == "EU") {window.location.href = 'http://www.euronews.com/2016/10/22/19-killed-in-russian-helicopter-crash'}
+              if (code == "SA") {window.location.href = 'https://www.theguardian.com/world/2016/oct/20/argentina-women-south-america-marches-violence-ni-una-menos'}
+            },2000);
+          },
+        }
       });
-    })
+    });
+    
         
   </script>
 </body>
